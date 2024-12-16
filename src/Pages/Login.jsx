@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+i//mport config from './config';
 
 function Login(props) {
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const navigate=useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -10,7 +12,7 @@ function Login(props) {
 
     e.preventDefault()
  
-    const response = await fetch(`http://localhost:5000/api/auth/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
        
         method: 'POST',
         headers: {
