@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 //import config from './config';
 
 function Login(props) {
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const navigate=useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -12,7 +12,7 @@ function Login(props) {
 
     e.preventDefault()
  
-    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    const response = await fetch(`https://counselling-backend-1.onrender.com/api/auth/login`, {
        
         method: 'POST',
         headers: {
