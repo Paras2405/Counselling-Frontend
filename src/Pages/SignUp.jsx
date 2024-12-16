@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 //import config from './config'
 function SignUp(props) {
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const navigate=useNavigate();
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
@@ -15,7 +15,7 @@ function SignUp(props) {
 
     e.preventDefault()
  
-    const response = await fetch(`${API_BASE_URL}/api/auth/createuser`, {
+    const response = await fetch(`https://counselling-backend-1.onrender.com/api/auth/createuser`, {
        
         method: 'POST',
         headers: {
