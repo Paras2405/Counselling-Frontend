@@ -20,14 +20,14 @@
     color:black;
   }
  
-  h1{position:relative;bottom:40vh !important}
-  p{position:relative;bottom:40vh !important}
+  h1{position:relative;bottom:30vh !important}
+  p{position:relative;bottom:30vh !important}
 
   .signup{
     position:relative;
     width:120px !important;
     height:35px !important;
-    bottom:40vh !important;
+    bottom:30vh !important;
     font-size: 14px !important;
     margin-left: 120px !important;
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
-i//mport config from './config';
+//import config from './config';
 
 function Login(props) {
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
