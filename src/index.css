@@ -1,6 +1,12 @@
 
 
 @media (max-width:768px){
+  nav{
+    position:fixed  ;
+    top:0;
+    width:100%;
+
+  }
   
   .navbox
   {position:relative; top:10px; left:80px; border-radius:5px; ;
@@ -11,7 +17,9 @@
    }
   img{
     width:100%;
-    height:300px !important;
+    height:400px !important;
+    position:relative;
+    top:5vh;
 
   }
   aside{
@@ -29,7 +37,7 @@
     height:35px !important;
     bottom:30vh !important;
     font-size: 14px !important;
-    margin-left: 120px !important;
+    margin-left: 130px !important;
   }
   .maincarousel{
     display: block !important;
@@ -54,20 +62,34 @@
     padding:10px 10px 10px 10px;
   }
   .footer p{
-    margin-top:260px;
+   display: flex !important;
+   justify-content: center;
+   margin-top: 300px;
   }
   .Hero p{
     font-size: 14px !important;
+  }
+  .Hero h3{
+    margin-left: 10px !important;
   }
   .mobile-only{
     display: block !important;
   }
   .formsubmit{
-    margin-left: 90px !important;
+    margin-left: 100px !important;
     width:120px;
     height:35px;
   }
+.common{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+}
+iframe{
+  width:100%!important;
 
+}
 
 }
 img{
@@ -132,4 +154,8 @@ aside{
  font-size: 18px;
  font-weight: 600;
  margin-left: 550px;
+}
+iframe{
+  margin-right: 50px;
+  width:500px;
 }

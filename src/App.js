@@ -12,6 +12,12 @@ import SignUp from './Pages/SignUp';
 import { useState } from 'react';
 import Alert from './components/Alert';
 import Meetings from './Pages/Meetings';
+import { useEffect } from 'react';
+const categories=["Depression","Anxiety","Stress"]
+
+
+
+
 
 
 function MobileComponents() {
@@ -32,6 +38,12 @@ function MobileComponents() {
 }
 
 function App() {
+  
+
+ 
+
+
+  
   const [alert, setAlert] = useState(null)
   const showAlert = (message, type) => {
     setAlert({ message, type });

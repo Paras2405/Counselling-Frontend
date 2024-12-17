@@ -50,8 +50,8 @@ function SignUp(props) {
   return (
     
     <>
- <h2 style={{textDecoration:"underline"}}className='text-center mt-3'>Sign Up</h2>
-    <div  className='container mt-5 '>
+ <h2 style={{textDecoration:"underline"}}className='text-center mt-5 py-5'>Sign Up</h2>
+    <div  className='container  '>
  
      <form  onSubmit={handleSubmit}>
      <div className="mb-3 d-flex justify-content-center">

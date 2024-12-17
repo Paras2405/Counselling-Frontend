@@ -36,12 +36,13 @@ function Login(props) {
     }
     
    
-    else if(json.error === "User does not exist"){
- 
-      console.log('User  does not exist')
-      props.showAlert('User does not exist','warning')
-      
-        navigate('/SignUp')
+    else{
+{
+    console.log('Wrong password')
+    props.showAlert('wrong password','warning')
+    navigate('/SignUp')
+   }
+     
     }
 
      
@@ -49,7 +50,7 @@ function Login(props) {
   return (
 
     <div className='container mt-5'>
-      <h2 style={{textDecoration:"underline"}}className='text-center mb-5'>Login</h2>
+      <h2 style={{textDecoration:"underline"}}className='text-center mt-5 py-5'>Login</h2>
      <form onSubmit={handleSubmit}>
   <div className="mb-3 d-flex justify-content-center">
    

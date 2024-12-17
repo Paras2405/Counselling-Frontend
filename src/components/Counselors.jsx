@@ -29,7 +29,9 @@ function Counselors() {
   </button>
 </div>
 <h2 className='text-center mt-5 mb-5'>About Us</h2>
+
 </div>
+
   )
 }
 
