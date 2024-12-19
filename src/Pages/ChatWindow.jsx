@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-i//mport ChatApp from '../components/ChatApp';
+//import ChatApp from '../components/ChatApp';
 import {jwtDecode} from 'jwt-decode'; // Ensure the correct import
 
 const ChatWindow = () => {
