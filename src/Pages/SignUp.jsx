@@ -1,7 +1,9 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 //import config from './config'
+//backendurl="https://counselling-backend-1.onrender.com"
 function SignUp(props) {
   //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   const navigate=useNavigate();
@@ -15,7 +17,7 @@ function SignUp(props) {
 
     e.preventDefault()
  
-    const response = await fetch(`https://counselling-backend-1.onrender.com/api/auth/createuser`, {
+    const response = await fetch(`${process.env.REACT_APP_API_LOCAL_URL}/api/auth/createuser`, {
        
         method: 'POST',
         headers: {
@@ -79,6 +81,7 @@ function SignUp(props) {
 
   <button className='formsubmit mt-3' type="submit">Submit</button>
 </form>
+<h4 className='text-center mt-5'>Already have an account? <Link role='button' to='/Login'>Login</Link></h4>
     </div>
     </>
     

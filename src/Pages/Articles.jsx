@@ -45,7 +45,7 @@ const Articles = () => {
           <div className="row">
             {articles[category]?.map((article, index) => (
               <div key={index} className="col-md-4 mb-3">
-                <div className="card h-50">
+                <div className="card h-70">
                   <img
                     src={article.image || "https://via.placeholder.com/150"}
                     className="card-img-top"

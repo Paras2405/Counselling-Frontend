@@ -2,7 +2,7 @@
 
 @media (max-width:768px){
   nav{
-    position:fixed  ;
+    position:fixed   ;
     top:0;
     width:100%;
 
@@ -13,13 +13,13 @@
     background-color: #FBEEEE;
    }
    .navbox a{
-    color:black;
+    color:black
    }
   img{
     width:100%;
     height:400px !important;
     position:relative;
-    top:5vh;
+   
 
   }
   aside{
@@ -90,6 +90,30 @@ iframe{
   width:100%!important;
 
 }
+.box{
+  width:350px;
+  height:250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-left: 5vw !important;
+  background-color: #FBEEEE;
+  flex-wrap: wrap;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px rgb(131, 125, 125);
+}
+.flatbox{
+  width:250px;
+  height:50px;
+  background-color: #3d3d38;
+  border-radius: 7px;
+}
+.flatbox p{
+  margin-top: 32vh  !important;
+}
+
+
 
 }
 img{
@@ -158,4 +182,72 @@ aside{
 iframe{
   margin-right: 50px;
   width:500px;
+}
+.box{
+  width:350px;
+  height:250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-left: 30vw;
+  background-color: #FBEEEE;
+  flex-wrap: wrap;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px rgb(131, 125, 125);
+}
+.flatbox{
+  width:250px;
+  height:50px;
+  background-color: #3d3d38;
+  border-radius: 7px;
+}
+.flatbox p{
+  margin-top: 62vh ;
+ 
+}
+#chat{
+  color:rgb(107, 104, 104);
+  box-shadow: 2px 2px 2px ;
+ 
+}
+#video{
+  color:rgb(107, 104, 104);
+  box-shadow: 2px 2px 2px ;
+ 
+}
+.communication{
+  display: flex;
+  justify-content:space-evenly;
+}
+.chat-app {
+  display: flex;
+  justify-content: center;
+  width:100%;
+  background-color: #FBEEEE;
+}
+.chat-list {
+  width:50%;
+  
+  border-right: 1px solid #ddd;
+ 
+
+}
+.chat-window {
+  flex: 1;
+  display: flex;
+ 
+  background-color: #FBEEEE;
+  flex-direction: column;
+}
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+.message-input {
+  display: flex;
+  padding: 10px;
+  width:50%;
+  border-top: 1px solid #ddd;
 }

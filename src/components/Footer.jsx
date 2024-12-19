@@ -16,7 +16,7 @@ function Footer() {
 
 
 
-      <p className='text-center'>@copyrights 2024</p>
+      <p className='text-center'>Developed by Team   <b>Mindcure</b></p>
     </div>
   )
 }

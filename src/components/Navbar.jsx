@@ -30,12 +30,14 @@ function Navbar(props) {
         navigate('/')
 
     }
+
+    
     return (
         <div>
             <nav style={{ zIndex: 10, position: "sticky", height: "70px",backgroundColor:"#FBEEEE" }} className="navbar navbar-expand-lg ">
                 <div className="container-fluid">
 
-                    <Link  style={{ color: "#225DF3", fontWeight: "600" }} className="navbar-brand" to="#">Mindcure </Link >
+                    <Link  style={{ color:"#225DF3", fontWeight: "600" }} className="navbar-brand" to="#">{"Mindcure"} </Link >
 
 
 
@@ -50,7 +52,7 @@ function Navbar(props) {
                             <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link" to="/OurCounselors">Our Counselors</Link >
                             <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link " to={'/Meetings'}   onClick={handleMeetingsNavigation}>{location.pathname==='/Meetings'?'':'Meetings'}</Link >
                            { !isLoggedIn() && ( <Link className="login"style={{ gap:"20px",margin:"6px",backgroundColor:"#3D3838",color:"white",width:"80px",height:"35px", border:"none",borderRadius:"5px",textDecoration:"none",display:"flex",justifyContent:"center",alignItems:"center"}} role="button"  to={location.pathname === '/login' ? '/signup' : '/login'}>    {location.pathname === '/login' ? 'Sign Up' : 'Login' }</Link>)}
-                          { isLoggedIn() && (<Link className='logout' style={{ gap:"20px",margin:"6px",backgroundColor:"#3D3838",color:"white",width:"80px",height:"35px", border:"none",borderRadius:"5px",textDecoration:"none",display:"flex",justifyContent:"center",alignItems:"center"}} role="button" to={'/'} onClick={handlelogout}>Logout</Link>)}  
+                          { isLoggedIn() && (<Link className='logout' style={{ gap:"20px",margin:"6px",backgroundColor:"#3D3D38",color:"white",width:"80px",height:"35px", border:"none",borderRadius:"5px",textDecoration:"none",display:"flex",justifyContent:"center",alignItems:"center"}} role="button" to={'/'} onClick={handlelogout}>Logout</Link>)}  
                         </div>
                     </div>
                     
@@ -62,6 +64,5 @@ function Navbar(props) {
 }
 
 export default Navbar
-
 
 
