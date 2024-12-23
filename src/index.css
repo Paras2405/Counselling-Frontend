@@ -15,7 +15,7 @@
    .navbox a{
     color:black
    }
-  img{
+  .heroimg{
     width:100%;
     height:400px !important;
     position:relative;
@@ -28,8 +28,14 @@
     color:black;
   }
  
-  h1{position:relative;bottom:30vh !important}
-  p{position:relative;bottom:30vh !important}
+  h1{position:relative;
+   bottom: 30vh !important;
+  
+  }
+   p{position:relative;
+    bottom: 30vh !important;
+    
+  }
 
   .signup{
     position:relative;
@@ -112,18 +118,24 @@ iframe{
 .flatbox p{
   margin-top: 32vh  !important;
 }
-
+.profile-pic{
+  width:60px !important;
+  height:60px !important;
+  border-radius: 50% !important;
+  margin-left: 2px !important;
+ 
+}
 
 
 }
-img{
+.heroimg{
   width:100%;
   height:550px;
  
 
 }
-h1{position:relative;bottom:60vh}
-p{position:relative;bottom:60vh}
+ h1{position:relative;bottom:60vh}
+ p{position:relative;bottom:60vh}
 
 .signup{
   background-color:#3d3d38;
@@ -220,13 +232,13 @@ iframe{
   display: flex;
   justify-content:space-evenly;
 }
-.chat-app {
+/*.chat-app {
   display: flex;
   justify-content: center;
   width:100%;
   background-color: #FBEEEE;
-}
-.chat-list {
+}*/
+/*.chat-list {
   width:50%;
   
   border-right: 1px solid #ddd;
@@ -250,4 +262,11 @@ iframe{
   padding: 10px;
   width:50%;
   border-top: 1px solid #ddd;
+}*/
+.profile-pic{
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  margin-left: 100px;
 }
+

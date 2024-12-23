@@ -6,10 +6,10 @@ function Hero() {
   return (
     <>
     <div className=' Hero'>
-      <img style={{filter: "contrast(80%) brightness(70%)"}} src={img} alt="Hero" />
+      <img className='heroimg' style={{filter: "contrast(80%) brightness(70%)"}} src={img} alt="Hero" />
     
-      <h1 style={{fontWeight:"600"}}className='text-center text-white '>Therapy heals your inner conscience</h1>
-      <p  style={{fontSize:"16px",opacity:"0.8"}} className='text-center text-white  '>Mindcure is a platform where we can connect with profesional counselors <br></br>via Video conferencing and chat sessions and get personalized counselling in effective manner</p>
+      <h1 style={{fontWeight:"600",opacity:"0.8"}}className='text-center text-white '>Therapy heals your inner conscience</h1>
+      <p  style={{fontSize:"16px",opacity:"0.8"}} className='text-center text-white '>Mindcure is a platform where we can connect with profesional counselors <br></br>via Video conferencing and chat sessions and get personalized counselling in effective manner</p>
       <Link style={{textDecoration:"none"}} className='signup' to="/Signup" role="button">Get started</Link>
       <aside  className="text-center"><b>
      <h3>MindCure: Your Partner in Emotional Wellness</h3> 
