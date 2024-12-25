@@ -5,7 +5,7 @@ function AboutUs() {
   return (
     <>
      <div className='container-fluid mt-5 py-5 common flex-wrap'>
-    about us
+     <h3 className='text-center'>About Us</h3>
   
     </div>
     <Footer></Footer>

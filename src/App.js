@@ -14,8 +14,9 @@ import Alert from './components/Alert';
 import Meetings from './Pages/Meetings';
 import { GoogleOAuthProvider } from '@react-oauth/google';
  import ProtectedRoute from './components/ProtectedRoute';
-
 import VideoWindow from './Pages/VideoWindow';
+import Chat from './Pages/Chat';
+import Appointments from './Pages/Appointments';
 
 //const categories = ["Depression", "Anxiety", "Stress"];
 
@@ -62,6 +63,8 @@ const clientId='590215871700-bjrs3sqt8ldffdnvd049oudhifb9triu.apps.googleusercon
         <Route path="/Signup" element={<SignUp showAlert={showAlert} />} />
         <Route path="/OurCounselors" element={<OurCounselors />} />
         <Route path="/VideoWindow" element={<VideoWindow/>}/>
+        <Route path="/Chat" element={<Chat/>}/>
+        <Route path="/Appointments" element={<Appointments/>}/>
 
       
 

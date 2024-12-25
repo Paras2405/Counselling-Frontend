@@ -299,9 +299,9 @@ function JoinScreen({ getMeetingAndToken }) {
         value={meetingId}
         onChange={(e) => setMeetingId(e.target.value)}
       />
-      <button onClick={()=>handleJoin()}>Join</button>
+      <button className="btn btn-danger mx-2" onClick={()=>handleJoin()}>Join</button>
       <span> or </span>
-      <button onClick={()=>handleCreate()}>Create Meeting</button>
+      <button className="btn btn-danger mx-2" onClick={()=>handleCreate()}>Create Meeting</button>
     </div>
   );
 }
@@ -372,9 +372,9 @@ function Controls() {
 
   return (
     <div>
-      <button onClick={()=>leave()}>Leave</button>
-      <button onClick={()=>toggleMic()}>Toggle Mic</button>
-      <button onClick={()=>toggleWebcam()}>Toggle Webcam</button>
+      <button  className="btn btn-primary mx-2" onClick={()=>leave()}>Leave</button>
+      <button  className="btn btn-primary mx-2"onClick={()=>toggleMic()}>Toggle Mic</button>
+      <button  className="btn btn-primary mx-2"onClick={()=>toggleWebcam()}>Toggle Webcam</button>
     </div>
   );
 }
@@ -393,7 +393,7 @@ function MeetingView({ meetingId, onMeetingLeave }) {
 
   return (
     <div className="container">
-      <h3>Meeting ID: {meetingId}</h3>
+      <h3 className="text-center">Meeting ID: {meetingId}</h3>
       {joined ? (
         <div>
           <Controls />

@@ -16,7 +16,7 @@ function Footer() {
 
 
 
-      <p className='text-center'>Developed by Team   <b>Mindcure</b></p>
+      <p className='text-center'>Developed by Team &nbsp;<b>Mindcure</b></p>
     </div>
   )
 }

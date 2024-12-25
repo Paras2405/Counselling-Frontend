@@ -3,12 +3,14 @@ import Footer from '../components/Footer'
 
 function OurCounselors() {
   return (
-    <div className='container  py-5 mt-5 common flex-wrap'>
-      Our Counselors
-
-
-      <Footer></Footer>
+    <>
+    <div className='container-fluid mt-5 py-5 common flex-wrap'>
+   <h3 className='text-center'>Our Counselors</h3>
+  
     </div>
+    <Footer></Footer>
+    </>
+    
   )
 }
 

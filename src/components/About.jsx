@@ -17,21 +17,22 @@ function About() {
       <img  style={{ filter: "contrast(80%) brightness(50%)" }}src={p1} className="d-block w-100" alt="..."/>
       <div className="carousel-caption  d-md-block about">
         <h5>Riyanka Dey</h5>
-        <p >Documentation head</p>
+        
       </div>
     </div>
     <div className="carousel-item">
       <img style={{ filter: "contrast(80%) brightness(50%)" }}src={p2} className="d-block w-100" alt="..."/>
       <div className="carousel-caption  d-md-block">
       <h5>Priyanka Chaudhari</h5>
-      <p>Documentation head</p>
+    
       </div>
     </div>
     <div className="carousel-item">
       <img style={{ filter: "contrast(80%) brightness(50%)" }}src={p3} className="d-block w-100" alt="..."/>
       <div className="carousel-caption  d-md-block">
       <h5>Paras Kadam</h5>
-      <p>Passionate Developer</p>
+     
+     
       </div>
     </div>
   </div>

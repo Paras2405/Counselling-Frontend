@@ -10,13 +10,16 @@ function Counselors() {
 <div id="carouselExampleFade" className="carousel slide carousel-fade">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={c1} className="d-block w-100" alt="..."/>
+      <img style={{ filter: "contrast(80%) brightness(50%)"}} src={c1} className="d-block w-100" alt="..."/>
+      <p style={{marginTop:"180px",}} className='text-center text-white'>Counselor 1</p>
     </div>
     <div className="carousel-item">
-      <img src={c2} className="d-block w-100" alt="..."/>
+      <img style={{ filter: "contrast(80%) brightness(50%)"}} src={c2} className="d-block w-100" alt="..."/>
+      <p style={{marginTop:"180px",}} className='text-center text-white'>Counselor 2</p>
     </div>
     <div className="carousel-item">
-      <img src={c3} className="d-block w-100" alt="..."/>
+      <img style={{ filter: "contrast(80%) brightness(50%)"}} src={c3} className="d-block w-100" alt="..."/>
+      <p style={{marginTop:"180px",}} className='text-center text-white'>Counselor 3</p>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -28,7 +31,7 @@ function Counselors() {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-<h2 className='text-center mt-5 mb-5'>About Us</h2>
+<h2 className='text-center mt-5 mb-5'>Our Team</h2>
 
 </div>
 
