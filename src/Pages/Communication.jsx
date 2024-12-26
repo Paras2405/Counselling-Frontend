@@ -47,8 +47,9 @@ const Communication = ({ userToken, room }) => {
 
   return (
     <div className="chat-app container mt-3 border border-black">
-
+   <h4>This is Public Chat room  of Counselor-xyz</h4>
         <div style={{backgroundColor:"#3D3D38",height:"50px",width:"100%"}} className="upper container-fluid ">
+       
             <h2 className='text-white  text-center d-flex justify-content-center align-items-center'>Welcome to :{room}</h2>
         </div>
       {/* Display messages */}

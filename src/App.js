@@ -62,8 +62,8 @@ const clientId='590215871700-bjrs3sqt8ldffdnvd049oudhifb9triu.apps.googleusercon
         <Route path="/Login" element={<Login showAlert={showAlert} />} />
         <Route path="/Signup" element={<SignUp showAlert={showAlert} />} />
         <Route path="/OurCounselors" element={<OurCounselors />} />
-        <Route path="/VideoWindow" element={<VideoWindow/>}/>
-        <Route path="/Chat" element={<Chat/>}/>
+        <Route path="/VideoWindow" element={<VideoWindow showAlert={showAlert}/>}/>
+        <Route path="/Chat" element={<Chat showAlert={showAlert}/>}/>
         <Route path="/Appointments" element={<Appointments/>}/>
 
       

@@ -269,6 +269,7 @@ function MeetingGrid({ meetingId }) {
 export default ChatWindow;*/
 
 import React, { useEffect, useState, useRef, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { authToken, createMeeting } from "../api";
 import {
   MeetingProvider,
@@ -278,7 +279,7 @@ import {
 import ReactPlayer from "react-player";
 import {jwtDecode} from "jwt-decode"; // Correct import for jwtDecode
 
-function JoinScreen({ getMeetingAndToken }) {
+function JoinScreen({ getMeetingAndToken,showAlert }) {
   const [meetingId, setMeetingId] = useState("");
 
   const handleJoin = async () => {
@@ -289,20 +290,37 @@ function JoinScreen({ getMeetingAndToken }) {
 
   const handleCreate = async () => {
     await getMeetingAndToken(null); // Creating a new meeting
+
   };
 
   return (
-    <div>
-      <input
+  <>
+
+  <h3 className="text-center"> Welcome to Video Conferencing room </h3>
+
+  <div className="text-center mt-5 container d-flex align-items-center justify-content-center flex-wrap ">
+      <input style={{width:"50%"}}
+       className="form-control"
         type="text"
         placeholder="Enter Meeting ID"
         value={meetingId}
         onChange={(e) => setMeetingId(e.target.value)}
       />
-      <button className="btn btn-danger mx-2" onClick={()=>handleJoin()}>Join</button>
+      <button className="btn btn-success mx-2" onClick={()=>handleJoin()}>Join</button>
       <span> or </span>
-      <button className="btn btn-danger mx-2" onClick={()=>handleCreate()}>Create Meeting</button>
+      <button className="btn btn-sm btn-danger mx-2" onClick={()=>{handleCreate()
+                                                                   showAlert("Meeting id created","success")
+      }}>Create Meeting</button>
+
+      <div className="flex">
+      <h5 className="text-center mt-5">To Connect with the counselor you need to Book an appointment</h5>
+    <Link  to="/Appointments"className="btn btn-primary text-center">Book Appointment</Link>
     </div>
+      </div>
+    
+    
+    </>
+    
   );
 }
 
@@ -341,7 +359,7 @@ function ParticipantView({ participantId }) {
   }, [micStream, micOn]);
 
   return (
-    <div>
+    <div className="container mt-5">
       <p>
         Participant: {displayName} | Webcam: {webcamOn ? "ON" : "OFF"} | Mic:{" "}
         {micOn ? "ON" : "OFF"}
@@ -367,19 +385,27 @@ function ParticipantView({ participantId }) {
   );
 }
 
-function Controls() {
+function Controls({showAlert}) {
   const { leave, toggleMic, toggleWebcam } = useMeeting();
+
+  
 
   return (
     <div>
-      <button  className="btn btn-primary mx-2" onClick={()=>leave()}>Leave</button>
-      <button  className="btn btn-primary mx-2"onClick={()=>toggleMic()}>Toggle Mic</button>
-      <button  className="btn btn-primary mx-2"onClick={()=>toggleWebcam()}>Toggle Webcam</button>
+      <button  className="btn btn-danger mx-2" onClick={()=>{leave()
+                                                             showAlert("Meeting left","danger")
+      }}>Leave</button>
+      <button  className="btn btn-success mx-2"onClick={()=>{toggleMic()
+                                                               showAlert("Mic turned on","warning")
+      }}>Toggle Mic</button>
+      <button  className="btn btn-primary mx-2"onClick={()=>{toggleWebcam()
+                                                              showAlert("Camera turned on","warning")
+      }}>Toggle Webcam</button>
     </div>
   );
 }
 
-function MeetingView({ meetingId, onMeetingLeave }) {
+function MeetingView({ meetingId, onMeetingLeave,showAlert }) {
   const [joined, setJoined] = useState(false);
 
   const { join, participants } = useMeeting({
@@ -388,28 +414,29 @@ function MeetingView({ meetingId, onMeetingLeave }) {
   });
 
   const handleJoin = () => {
+    showAlert("Meeting Joined successfully","primary")
     join();
   };
 
   return (
-    <div className="container">
-      <h3 className="text-center">Meeting ID: {meetingId}</h3>
+    <div className="container text-center">
+      <h3 className="text-center text-primary">Meeting ID: {meetingId}</h3>
       {joined ? (
         <div>
-          <Controls />
+          <Controls showAlert={showAlert} />
           {/* Render all participants */}
           {[...participants.keys()].map((participantId) => (
             <ParticipantView key={participantId} participantId={participantId} />
           ))}
         </div>
       ) : (
-        <button onClick={handleJoin}>Join</button>
+        <button className="btn btn-success" onClick={handleJoin}>Join</button>
       )}
     </div>
   );
 }
 
-function VideoWindow() {
+function VideoWindow({showAlert}) {
   const [meetingId, setMeetingId] = useState(null);
   const [user, setUser] = useState(null);
 
@@ -456,20 +483,20 @@ function VideoWindow() {
   }, []);
   return authToken && meetingId ? (
     <div>
-      <h2>Welcome {user.name}</h2>
+      <h2 className="text-center">Welcome {user.name}</h2>
     <MeetingProvider
       config={{
         meetingId,
         micEnabled: true,
         webcamEnabled: true,
-        name: "C.V. Raman",
+        name:user.name,
       }}
       token={authToken}
     >
-      <MeetingView meetingId={meetingId} onMeetingLeave={onMeetingLeave} />
+      <MeetingView meetingId={meetingId} onMeetingLeave={onMeetingLeave} showAlert={showAlert} />
     </MeetingProvider>
     </div> ) : (
-    <JoinScreen getMeetingAndToken={getMeetingAndToken} />
+    <JoinScreen getMeetingAndToken={getMeetingAndToken} showAlert={showAlert}/>
   );
 }
 

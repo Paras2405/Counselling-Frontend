@@ -2,6 +2,7 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Spinner from '../components/Spinner';
 //import config from './config'
 //backendurl="https://counselling-backend-1.onrender.com"
 function SignUp(props) {
@@ -12,11 +13,12 @@ function SignUp(props) {
   const [password,setPassword] = useState("")
   const [mobileno,setMobileno] = useState("")
   const [role,setRole] = useState("")
+  const [loading,setloading] = useState(false)
 
   const handleSubmit=async(e)=>{
 
     e.preventDefault()
- 
+   setloading(true)
     const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/auth/createuser`, {
        
         method: 'POST',
@@ -29,6 +31,7 @@ function SignUp(props) {
       })
     const json= await response.json()
     console.log(json)
+    setloading(false)
     if(json.success){
        console.log('Account Created !')
         props.showAlert('Account Created successfully','success')
@@ -43,6 +46,12 @@ function SignUp(props) {
         props.showAlert('User already exists', 'warning');
         navigate('/SignUp')
     }
+   else{
+    console.log('Invalid Input')
+    props.showAlert('Enter details correctly', 'warning');
+    navigate('/SignUp')
+
+   }
 
      
 }
@@ -53,7 +62,8 @@ function SignUp(props) {
     
     <>
  <h2 style={{textDecoration:"underline"}}className='text-center mt-5 py-5'>Sign Up</h2>
-    <div  className='container  '>
+ {loading && <Spinner/>}
+    <div  className='container'>
  
      <form  onSubmit={handleSubmit}>
      <div className="mb-3 d-flex justify-content-center">

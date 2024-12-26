@@ -20,6 +20,7 @@ const Appointments = () => {
     <li className="list-group-item">Email</li>
     <li className="list-group-item">Qualification</li>
     <li className="list-group-item">Counselling Timings:</li>
+    <li className="list-group-item">Counselling room name:<b>Counselling-xyz</b></li>
   </ul>
   <div className="card-body">
     <Link to="/OurCounselors" role="button" className="btn btn-primary mx-1">Profile</Link>
@@ -38,6 +39,7 @@ const Appointments = () => {
     <li className="list-group-item">Email</li>
     <li className="list-group-item">Qualification</li>
     <li className="list-group-item">Counselling Timings:</li>
+    <li className="list-group-item">Counselling room name:<b>Counselling-abc</b></li>
   </ul>
   <div className="card-body">
   <Link to="/OurCounselors" role="button" className="btn btn-primary mx-1">Profile</Link>

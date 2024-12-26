@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import {jwtDecode} from 'jwt-decode'; // Fix import here
+import Spinner from '../components/Spinner';
+
+
 
 function Login(props) {
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate(); // Declare navigate only once
   //Google auth logic
   const onLoginSuccess = async(res) => {
     try{
-    const decoded = jwtDecode(res.credential);
-  console.log(decoded);
-    props.showAlert('User Logged in successfully', 'success');
-    navigate('/Meetings');
+  
+    setLoading(true)
     const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/auth/google-login`, {
       method: 'POST',
       headers: {
@@ -22,6 +24,10 @@ function Login(props) {
 
     const json = await response.json();
     console.log("Backend Response:", json);
+    setLoading(false)
+    const decoded = jwtDecode(res.credential);
+    console.log(decoded);
+     
     if (json.success) {
       // Store the auth token returned by your backend
       localStorage.setItem('auth-token', json.authtoken);
@@ -53,7 +59,7 @@ function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+   setLoading(true)
     const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
@@ -64,7 +70,7 @@ function Login(props) {
 
     const json = await response.json();
     console.log(json);
-
+  setLoading(false)
     if (json.success) {
       localStorage.setItem('auth-token', json.authtoken);
       console.log('Logged in!');
@@ -73,8 +79,8 @@ function Login(props) {
 
       navigate('/Meetings'); // Navigate on successful login
     } else {
-      console.log('Wrong password');
-      props.showAlert('Wrong password', 'warning');
+      console.log('Invalid email or password');
+      props.showAlert('Invalid email or password', 'warning');
       navigate('/login'); // Redirect to login page
     }
   };
@@ -84,7 +90,8 @@ function Login(props) {
       <h2 style={{ textDecoration: 'underline' }} className="text-center mt-5 py-5">
         Login
       </h2>
-      <form onSubmit={handleSubmit}>
+      {loading && <Spinner/>}
+      <form className='container' onSubmit={handleSubmit}>
         <div className="mb-3 d-flex justify-content-center">
           <input
             type="email"
@@ -109,8 +116,9 @@ function Login(props) {
         <button type="submit" className="formsubmit mb-5">
           Submit
         </button>
+        <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
       </form>
-      <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
+     
     </div>
   );
 }
