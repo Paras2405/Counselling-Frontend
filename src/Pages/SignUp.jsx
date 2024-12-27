@@ -19,7 +19,7 @@ function SignUp(props) {
 
     e.preventDefault()
    setloading(true)
-    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/auth/createuser`, {
+    const response = await fetch(`${process.env.REACT_APP_API_LOCAL_URL}/api/auth/createuser`, {
        
         method: 'POST',
         headers: {

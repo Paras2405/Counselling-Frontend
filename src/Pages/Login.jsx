@@ -14,7 +14,7 @@ function Login(props) {
     try{
   
     setLoading(true)
-    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/auth/google-login`, {
+    const response = await fetch(`${process.env.REACT_APP_API_LOCAL_URL}/api/auth/google-login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

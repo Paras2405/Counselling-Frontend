@@ -46,7 +46,7 @@ function Navbar(props) {
                     </button>
                     <div className="collapse navbar-collapse navbox" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link " aria-current="page" to="/">{location.pathname==='/Meetings'?'':'Home'}</Link >
+                            <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link " aria-current="page" to="/">Home</Link >
                             <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link " aria-current="page" to="/Articles">Articles</Link >
                             <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link" to="/AboutUs">About us</Link >
                             <Link  style={{ marginLeft: "5px", fontWeight: "600" }} className="nav-link" to="/OurCounselors">Our Counselors</Link >

@@ -2,7 +2,7 @@
 
 @media (max-width:768px){
   nav{
-    position:fixed   ;
+    position:fixed  ;
     top:0;
     width:100%;
 
@@ -19,6 +19,8 @@
     width:100%;
     height:400px !important;
     position:relative;
+    top:0 !important;
+   
    
 
   }
@@ -29,21 +31,22 @@
   }
  
   h1{position:relative;
-   bottom: 30vh !important;
+   bottom: 31vh !important;
   
   }
    p{position:relative;
-    bottom: 30vh !important;
+    bottom: 31vh !important;
     
   }
 
   .signup{
-    position:relative;
+    position:absolute;
     width:120px !important;
     height:35px !important;
-    bottom:10vh !important;
+    top:65% !important;
+ 
     font-size: 14px !important;
-    margin-left: 130px !important;
+  
   }
   .maincarousel{
     display: block !important;
@@ -82,7 +85,7 @@
     display: block !important;
   }
   .formsubmit{
-    margin-left: 100px !important;
+    margin-left: 120px !important;
     width:120px;
     height:35px;
   }
@@ -141,7 +144,7 @@ iframe{
  p{position:relative;bottom:60vh}
 
 .signup{
-  background-color:#3d3d38;
+  background-color:#3D3D38;
   color:white;
   width:160px;
   height:45px;
@@ -150,10 +153,11 @@ iframe{
   display:flex;
   justify-content:center;
   align-items:center;
- margin-left: 670px;
- position: relative;
 
- bottom: 60vh;
+ position:absolute;
+left:40%;
+
+bottom:40%
 
 }
 aside{
@@ -192,7 +196,7 @@ aside{
  color:white;
  font-size: 18px;
  font-weight: 600;
- margin-left: 550px;
+ margin-left: 500px;
 }
 iframe{
   margin-right: 50px;

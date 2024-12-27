@@ -296,7 +296,7 @@ function JoinScreen({ getMeetingAndToken,showAlert }) {
   return (
   <>
 
-  <h3 className="text-center"> Welcome to Video Conferencing room </h3>
+  <h3 className="text-center mt-3 "> Welcome to Video Conferencing room </h3>
 
   <div className="text-center mt-5 container d-flex align-items-center justify-content-center flex-wrap ">
       <input style={{width:"50%"}}
@@ -308,7 +308,7 @@ function JoinScreen({ getMeetingAndToken,showAlert }) {
       />
       <button className="btn btn-success mx-2" onClick={()=>handleJoin()}>Join</button>
       <span> or </span>
-      <button className="btn btn-sm btn-danger mx-2" onClick={()=>{handleCreate()
+      <button className="btn btn-sm btn-danger mx-2 mt-3" onClick={()=>{handleCreate()
                                                                    showAlert("Meeting id created","success")
       }}>Create Meeting</button>
 
@@ -359,11 +359,11 @@ function ParticipantView({ participantId }) {
   }, [micStream, micOn]);
 
   return (
-    <div className="container mt-5">
-      <p>
+    <div className="container flex  mt-5">
+      <h2 className="mb-3">
         Participant: {displayName} | Webcam: {webcamOn ? "ON" : "OFF"} | Mic:{" "}
         {micOn ? "ON" : "OFF"}
-      </p>
+      </h2>
       <audio ref={micRef} autoPlay playsInline muted={isLocal} />
       {webcamOn && videoStream && (
         <ReactPlayer
@@ -375,7 +375,7 @@ function ParticipantView({ participantId }) {
           playing={true}
           url={videoStream}
           height="300px"
-          width="300px"
+          width="350px"
           onError={(err) => {
             console.error("Participant video error", err);
           }}
@@ -396,10 +396,10 @@ function Controls({showAlert}) {
                                                              showAlert("Meeting left","danger")
       }}>Leave</button>
       <button  className="btn btn-success mx-2"onClick={()=>{toggleMic()
-                                                               showAlert("Mic turned on","warning")
+                                                              
       }}>Toggle Mic</button>
       <button  className="btn btn-primary mx-2"onClick={()=>{toggleWebcam()
-                                                              showAlert("Camera turned on","warning")
+                                                             
       }}>Toggle Webcam</button>
     </div>
   );
@@ -420,7 +420,7 @@ function MeetingView({ meetingId, onMeetingLeave,showAlert }) {
 
   return (
     <div className="container text-center">
-      <h3 className="text-center text-primary">Meeting ID: {meetingId}</h3>
+      <h3 className="text-center ">Meeting ID: {meetingId}</h3>
       {joined ? (
         <div>
           <Controls showAlert={showAlert} />
