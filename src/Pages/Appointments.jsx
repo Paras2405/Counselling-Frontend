@@ -9,7 +9,7 @@ const Appointments = () => {
      <h2 className='text-center mt-5'>You are one step near for Counseling!!</h2>
     <div className='PageApp'>
        
-      <div className="card mx-5 mt-5" style={{width: "18rem"}}>
+      <div className="card mx-5 mt-5" >
   <img src={c1} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Counselor 1</h5>
