@@ -10,7 +10,7 @@ function Hero() {
         <div className=" flex-wrap">
         <h1 style={{fontWeight:"600",opacity:"0.8"}}className='text-center text-white '>Therapy heals your inner conscience</h1>
         <p  style={{fontSize:"16px",opacity:"0.8"}} className='text-center text-white '>Mindcure is a platform where we can connect with profesional counselors <br></br>via Video conferencing and chat sessions and get personalized counselling in effective manner</p>
-        <Link style={{textDecoration:"none",marginLeft:'35%'}} className=' mt-5 signup' to="/Signup" role="button">Get started</Link>
+        <Link style={{textDecoration:"none",marginLeft:'35%'}} className='  signup' to="/Signup" role="button">Get started</Link>
         </div>
        
      

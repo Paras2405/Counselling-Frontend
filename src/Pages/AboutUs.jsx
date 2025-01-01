@@ -9,7 +9,7 @@ import c5 from '../c5.jpeg'
 function AboutUs() {
   return (
     <>
-     <div className='px-2  fw-semibold'>
+     <div className='mx-2  fw-semibold'>
      <h3 className='text-center mb-3 mt-5'>About Us</h3>
      We, the students of Fr. C. Rodrigues Institute of Technology (FCRIT), are proud to present this website as a step toward fostering better communication and understanding between students and counselors.
 
